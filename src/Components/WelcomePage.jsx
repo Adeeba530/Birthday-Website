@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaHeart, FaGift, FaBirthdayCake, FaStar } from "react-icons/fa";
 import confetti from "canvas-confetti";
 
-function WelcomePage({ setPage, playMusic }) {
+function WelcomePage({ setPage }) {
 
   useEffect(() => {
     confetti({

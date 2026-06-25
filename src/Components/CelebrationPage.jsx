@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import image from "../assets/images/4.jpg";
+import image from "../assets/images/2.jpeg";
 
 function random(min, max) {
   return Math.random() * (max - min) + min;
