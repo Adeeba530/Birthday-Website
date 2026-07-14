@@ -9,7 +9,7 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import confetti from "canvas-confetti";
-import mainImg from "../assets/images/21.jpeg";
+import mainImg from "../assets/images/2.jpeg";
 
 function WelcomePage({ setPage }) {
   useEffect(() => {
