@@ -14,59 +14,37 @@ export default function LightUpPage({ setPage }) {
 
   return (
     <div
-      className="min-h-screen relative flex flex-col items-center justify-center overflow-hidden px-4 transition-all duration-700"
+      className="min-h-screen relative flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 md:px-8 py-10 sm:py-12"
       style={{
         background: on
-          ? "radial-gradient(circle at center, #ffb6c1, #2a0f1f)"
-          : "#0b0b10",
+          ? "radial-gradient(circle at center, #4fb4ff, #061229)"
+          : "#060d1c",
       }}
     >
-      {/* GLOW EFFECT (responsive) */}
-      <div className="absolute w-[180px] sm:w-[250px] md:w-[300px] h-[180px] sm:h-[250px] md:h-[300px] bg-pink-500 blur-3xl opacity-30 rounded-full" />
+      <div className="absolute w-[160px] sm:w-[220px] md:w-[280px] lg:w-[320px] h-[160px] sm:h-[220px] md:h-[280px] lg:h-[320px] bg-sky-500 blur-3xl opacity-25 rounded-full" />
 
-      {/* MAIN TEXT */}
+      <motion.div
+        className="absolute w-[120px] sm:w-[160px] md:w-[200px] lg:w-[240px] h-[120px] sm:h-[160px] md:h-[200px] lg:h-[240px] bg-sky-400/20 blur-[70px] rounded-full"
+        animate={{ scale: [1, 1.2, 1] }}
+        transition={{ duration: 3, repeat: Infinity }}
+      />
+
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="
-          z-10
-          text-white
-          text-center
-          font-bold
-          text-xl sm:text-2xl md:text-3xl lg:text-4xl
-          px-2
-        "
+        className="z-10 text-white text-center font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-2 leading-tight max-w-2xl"
       >
         Turn On The Lights ✨
       </motion.h1>
 
-      {/* BUTTON */}
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={handleLight}
-        className="
-          mt-8
-          px-5 sm:px-6 md:px-8
-          py-2 sm:py-3
-          rounded-full
-          bg-gradient-to-r from-pink-500 to-purple-500
-          text-white
-          font-semibold
-          shadow-xl
-          text-sm sm:text-base md:text-lg
-          z-10
-        "
+        className="mt-8 z-10 px-6 sm:px-7 md:px-8 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-blue-600 to-sky-400 text-white font-semibold shadow-xl text-sm sm:text-base md:text-lg"
       >
         💡 Light Up
       </motion.button>
-
-      {/* subtle floating glow animation */}
-      <motion.div
-        className="absolute w-[120px] sm:w-[180px] md:w-[220px] h-[120px] sm:h-[180px] md:h-[220px] bg-pink-400/20 blur-[80px] rounded-full"
-        animate={{ scale: [1, 1.2, 1] }}
-        transition={{ duration: 3, repeat: Infinity }}
-      />
     </div>
   );
 }
